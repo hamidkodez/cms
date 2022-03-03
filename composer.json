@@ -1,0 +1,43 @@
+{
+    "name": "syedhamidalishahofficial/cms",
+    "description": "Syed Hamid Ali Shah  Cms utilities and presets.",
+    "keywords": ["Syed Hamid Ali Shah", "cms"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Syed Hamid Ali Shah",
+            "email": "hamidcoding@outlook.com"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "illuminate/console": "^8.42|^9.0",
+        "illuminate/filesystem": "^8.42|^9.0",
+        "illuminate/support": "^8.82|^9.0",
+        "illuminate/validation": "^8.42|^9.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.23|^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Syedhamidalishahofficial\\Cms\\": "src/",
+            "Illuminate\\Foundation\\Auth\\": "auth-backend/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "3.x-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Syedhamidalishahofficial\\Cms\\CmsServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

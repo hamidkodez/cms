@@ -1,0 +1,26 @@
+use App\Http\Controllers\Frontend\PageController;
+use App\Http\Controllers\Frontend\PostController;
+use App\Http\Controllers\Auth\RegisterController;
+
+
+Route::get('/', [PageController::class, 'home'])->name('home');
+Route::get('/category/{slug}', [PostController::class, 'showCategory'])->name('category.show');
+Route::get('/tag/{slug}', [PostController::class, 'showTag'])->name('tag.show');
+Route::get('/blog/{slug}', [PostController::class, 'show'])->name('blog.show');
+Route::get('/blog', [PostController::class, 'index'])->name('blogs.index');
+Route::get('/author/{name}', [PostController::class, 'author'])->name('author.index');
+Route::get('/search/', [PageController::class, 'search'])->name('search.index');
+Route::get('/sitemap.xml', [App\Http\Controllers\frontend\SitemapController::class, 'index']);
+
+Route::get('register', [App\Http\Controllers\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('register', [App\Http\Controllers\Auth\RegisterController::class, 'register']);
+Route::post('login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
+Route::get('login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
+Route::prefix('/password')->as('password.')->group(function () {
+//    Route::post('/email', [App\Http\Controllers\frontend\ForgotPasswordController::class, 'sendResetLinkEmail'])->name('email');
+//    Route::get('/reset/{token}', [App\Http\Controllers\frontend\ForgotPasswordController::class, 'showResetForm'])->name('reset');
+//    Route::post('/reset', [App\Http\Controllers\frontend\ForgotPasswordController::class, 'reset'])->name('update');
+//    Route::get('/reset/', [App\Http\Controllers\frontend\ForgotPasswordController::class, 'showLinkRequestForm'])->name('request');
+});
+
+Route::get('/{page:slug}', [PageController::class, 'show'])->name('page.show');
