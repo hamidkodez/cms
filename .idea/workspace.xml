@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10334c6f-72c5-4e85-91c2-f4ce354af3f8" name="Changes" comment="updated version cms package">
-      <change afterPath="$PROJECT_DIR$/stubs/database/migrations/2022_03_04_140557_add_multiple_column_to_users.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/database/migrations/2022_02_24_101200_create_password_resets_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/database/migrations/2022_02_24_101207_create_users_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stubs/Controllers/Backend/PageController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/Backend/PageController.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stubs/database/migrations/2022_03_04_140557_add_multiple_column_to_users.php" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/database/migrations/2022_03_04_140557_add_multiple_column_to_users.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +79,7 @@
       <workItem from="1646300112567" duration="6734000" />
       <workItem from="1646312606285" duration="2247000" />
       <workItem from="1646316816388" duration="4255000" />
-      <workItem from="1646385527809" duration="7376000" />
+      <workItem from="1646385527809" duration="8890000" />
     </task>
     <task id="LOCAL-00001" summary="updated version cms package">
       <created>1646320039296</created>

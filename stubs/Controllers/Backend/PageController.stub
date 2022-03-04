@@ -15,12 +15,13 @@ use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
 {
+/*
   protected $page;
-
   public function __construct(PageService $page)
   {
     $this->page = $page;
   }
+*/
 
   public function index(Request $request)
   {

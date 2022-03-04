@@ -23,11 +23,11 @@ Once the `syedhamidalishahofficial/cms` package has been installed, you may inst
 ```bash
 # Create your database and connect with your project
 # Run these commands
+composer require laravelcollective/html
 composer require spatie/laravel-sluggable                       
 composer require mercuryseries/flashy
 composer require barryvdh/laravel-debugbar --dev
 php artisan vendor:publish --provider="Barryvdh\Debugbar\ServiceProvider"
-
 
 php artisan cms:assets            #To Publish Assets
 php artisan cms:controllers       #To Publish Controllers
@@ -36,6 +36,7 @@ php artisan cms:middlewares       #To Publish Middleware
 php artisan cms:models            #To Publish Models
 php artisan cms:routes            #To Publish Routes
 php artisan cms:views             #To Publish Views
+php artisan storage:link          #To Create the symbolic links configured for the application
 php artisan migrate:fresh --seed  #To Migrate and seeds the data in your database
 
 ```

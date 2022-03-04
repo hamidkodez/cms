@@ -16,7 +16,6 @@ class AddMultipleColumnToUsers extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('first_name', 255)->nullable();
             $table->string('last_name', 255)->nullable();
-            $table->string('password');
             $table->foreignId('role_id')->constrained();
             $table->enum('type',['user','vendor'])->nullable();
             $table->string('provider_id')->nullable();
@@ -37,9 +36,7 @@ class AddMultipleColumnToUsers extends Migration
             $table->string('facebook_url', 255)->nullable();
             $table->string('instagram_url', 255)->nullable();
             $table->text('interests')->nullable();
-            $table->rememberToken();
             $table->softDeletes();
-            $table->timestamps();
         });
     }
 
