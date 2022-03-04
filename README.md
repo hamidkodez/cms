@@ -49,6 +49,8 @@ php artisan cms:middlewares       To Publish Middleware
 php artisan cms:models            To Publish Models
 php artisan cms:routes            To Publish  Routes
 php artisan cms:views             To Publish Views
+php artisan migrate:fresh --seed             To Migrate and seeds the data in your database
+
 ```
 // add these lines in kernel.php $routeMiddleware => []
 ```
