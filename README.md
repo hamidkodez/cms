@@ -1,4 +1,4 @@
-# Laravel CMS
+# Laravel CMS Package
 
 <a href="https://packagist.org/packages/syedhamidalishahofficial/cms"><img src="https://img.shields.io/packagist/dt/hamid/ui" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/syedhamidalishahofficial/cms"><img src="https://img.shields.io/packagist/v/hamid/ui" alt="Latest Stable Version"></a>
@@ -6,58 +6,45 @@
 
 ## Introduction
 
-While Laravel does not dictate which JavaScript or CSS pre-processors you use, it does provide a basic starting point using [Bootstrap](https://getbootstrap.com/), [React](https://reactjs.org/), and / or [Vue](https://vuejs.org/) that will be helpful for many applications. By default, Laravel uses [NPM](https://www.npmjs.org/) to install both of these frontend packages.
-
-> This legacy package is a very simple authentication scaffolding built on the Bootstrap CSS framework. While it continues to work with the latest version of Laravel, you should consider using [Laravel Breeze](https://github.com/laravel/breeze) for new projects. Or, for something more robust, consider [Laravel Jetstream](https://github.com/laravel/jetstream).
+It is provides a starting point for any laravel project (Frontend Backend system.
 
 ## Official Documentation
 
-### Supported Versions
-
-Only the latest major version of Laravel CMS receives bug fixes. The table below lists compatible Laravel versions:
-
-| Version | Laravel Version |
-|---- |----|
-| [1.x](https://github.com/syedhamidalishahofficial/cms/tree/1.x) | 5.8, 6.x |
-| [2.x](https://github.com/syedhamidalishahofficial/cms/tree/2.x) | 7.x |
-| [3.x](https://github.com/syedhamidalishahofficial/cms/tree/3.x) | 8.x, 9.x |
-
 ### Installation
 
-The Bootstrap and Vue scaffolding provided by Laravel is located in the `hamid/cms` Composer package, which may be installed using Composer:
+The Cms provided by Syed Hamid Ali Shah is located in the `syedhamidalishahofficial/cms` Composer package, which may be installed using Composer:
 
 ```bash
 composer require syedhamidalishahofficial/cms
 ```
 
-Once the `hamid/cms` package has been installed, you may install the frontend scaffolding using the `ui` Artisan command:
-
-
+Once the `syedhamidalishahofficial/cms` package has been installed, you may install the frontend scaffolding using the `ui` Artisan command:
+#  Step To Be Followed
 ```bash
-// These packages are required ...
+# Create your database and connect with your project
+# Run these commands
 composer require spatie/laravel-sluggable                       
 composer require mercuryseries/flashy
 composer require barryvdh/laravel-debugbar --dev
 php artisan vendor:publish --provider="Barryvdh\Debugbar\ServiceProvider"
 
 
-// php Artisan Commands...
-php artisan cms:assets            Publishing Assets
-php artisan cms:controllers       To Publish Controllers
-php artisan cms:database          To Publish Database files
-php artisan cms:middlewares       To Publish Middleware
-php artisan cms:models            To Publish Models
-php artisan cms:routes            To Publish  Routes
-php artisan cms:views             To Publish Views
-php artisan migrate:fresh --seed             To Migrate and seeds the data in your database
+php artisan cms:assets            #To Publish Assets
+php artisan cms:controllers       #To Publish Controllers
+php artisan cms:database          #To Publish Database files
+php artisan cms:middlewares       #To Publish Middleware
+php artisan cms:models            #To Publish Models
+php artisan cms:routes            #To Publish Routes
+php artisan cms:views             #To Publish Views
+php artisan migrate:fresh --seed  #To Migrate and seeds the data in your database
 
 ```
-// add these lines in kernel.php $routeMiddleware => []
+// Add these lines in kernel.php inside the $routeMiddleware => [] Array
 ```
 'admin.auth' => \App\Http\Middleware\AdminAuthenticate::class,
 'admin.guest' => \App\Http\Middleware\AdminRedirectIfAuthenticated::class,
 ```
-// add this to auth.php 'providers' => []
+// Add this to auth.php inside the 'guards' => [] Array
 ```
 'admin' => [
     'driver' => 'session',
@@ -65,14 +52,14 @@ php artisan migrate:fresh --seed             To Migrate and seeds the data in yo
 ],
 
 ```
-// add this to auth.php 'guards' => []
+// Add this to auth.php inside the 'providers' => [] Array
 ```
-'admin' => [
-    'driver' => 'session',
-    'provider' => 'admins',
+'admins' => [
+    'driver' => 'eloquent',
+    'model' => App\Models\Admin::class,
 ],
 ```
-// add this to auth.php 'passwords' => []
+// Add this to auth.php inside the 'passwords' => [] Array
 ```
 'admins' => [
     'provider' => 'admins',
