@@ -9,20 +9,11 @@ use App\Models\PageContent;
 use App\Models\PageElements;
 use App\Models\PageElementSection;
 use App\Models\PageSection;
-use App\Services\PageService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
 {
-/*
-  protected $page;
-  public function __construct(PageService $page)
-  {
-    $this->page = $page;
-  }
-*/
-
   public function index(Request $request)
   {
     if ($request->ajax()) {
