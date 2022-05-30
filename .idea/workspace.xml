@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10334c6f-72c5-4e85-91c2-f4ce354af3f8" name="Changes" comment="updated version cms package">
-      <change afterPath="$PROJECT_DIR$/stubs/Controllers/Frontend/UserController.stub" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stubs/Views/frontend/user/dashboard/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stubs/Middleware/CheckRole.stub" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Routes/route.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Routes/route.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stubs/Auth/LoginController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Auth/LoginController.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stubs/Auth/RegisterController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Auth/RegisterController.stub" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +44,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/stubs/Views/frontend/user" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/stubs/Middleware" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -54,11 +55,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\cms\stubs\Middleware" />
       <recent name="C:\xampp\htdocs\cms\stubs\Views\frontend\user" />
       <recent name="C:\xampp\htdocs\cms\stubs\Controllers\Frontend" />
       <recent name="C:\xampp\htdocs\cms\stubs\database\migrations" />
       <recent name="C:\xampp\htdocs\cms\src" />
-      <recent name="C:\xampp\htdocs\ui\stubs\Views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\ui\stubs" />
@@ -80,7 +81,7 @@
       <workItem from="1646312606285" duration="2247000" />
       <workItem from="1646316816388" duration="4255000" />
       <workItem from="1646385527809" duration="8890000" />
-      <workItem from="1653735712134" duration="6219000" />
+      <workItem from="1653735712134" duration="9187000" />
     </task>
     <task id="LOCAL-00001" summary="updated version cms package">
       <created>1646320039296</created>

@@ -23,12 +23,12 @@ Once the `syedhamidalishahofficial/cms` package has been installed, you may inst
 ```bash
 # Create your database and connect with your project
 # Run these commands
+composer require phpmailer/phpmailer
 composer require laravelcollective/html
 composer require spatie/laravel-sluggable                       
 composer require mercuryseries/flashy
 composer require barryvdh/laravel-debugbar --dev
 php artisan vendor:publish --provider="Barryvdh\Debugbar\ServiceProvider"
-
 php artisan cms:assets            #To Publish Assets
 php artisan cms:controllers       #To Publish Controllers
 php artisan cms:database          #To Publish Database files
@@ -44,6 +44,7 @@ php artisan migrate:fresh --seed  #To Migrate and seeds the data in your databas
 ```
 'admin.auth' => \App\Http\Middleware\AdminAuthenticate::class,
 'admin.guest' => \App\Http\Middleware\AdminRedirectIfAuthenticated::class,
+'role' => \App\Http\Middleware\CheckRole::class,
 ```
 // Add this to auth.php inside the 'guards' => [] Array
 ```

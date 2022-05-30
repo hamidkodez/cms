@@ -37,4 +37,19 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+  protected function authenticated(Request $request, $user)
+  {
+    Flashy::success("User Login Successful.");
+    return redirect()->route('user.dashboard');
+  }
+
+   public function showLoginForm()
+   {
+     if (Auth::check()) {
+       return redirect()->route('user.dashboard');
+     } else {
+       return view('frontend.user.login');
+     }
+   }
 }

@@ -41,6 +41,15 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    public function showRegistrationForm()
+    {
+        if (Auth::check()) {
+        return redirect()->route('user.dashboard');
+        } else {
+          return view('frontend.user.register');
+        }
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
