@@ -36,10 +36,16 @@ Route::prefix('/password')->as('password.')->group(function () {
 //    Route::get('/reset/', [App\Http\Controllers\frontend\ForgotPasswordController::class, 'showLinkRequestForm'])->name('request');
 });
 
-Route::group(['prefix' => 'admin',
-//    'as' => 'admin.'
-//    'namespace' => 'backend'
-], function () {
+Route::group(['middleware' => 'auth'], function () {
+  Route::post('logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
+  Route::group(['middleware' => 'role:user', 'prefix' => 'user', 'as' => 'user.'], function () {
+    Route::get('/', [App\Http\Controllers\Frontend\UserController::class, 'dashboard'])->name('dashboard');
+    Route::post('/profile/update', [App\Http\Controllers\Frontend\UserController::class, 'update'])->name('profile.update');
+    Route::post('/password/update', [App\Http\Controllers\Frontend\UserController::class, 'password'])->name('password.update');
+  });
+});
+
+Route::group(['prefix' => 'admin','as'=>'admin.'], function () {
     Route::group(['middleware' => 'admin.guest'], function () {
         Route::view('login', 'backend.login.login')->name('admin.login');
         Route::post('login', [AdminController::class, 'login'])->name('admin.auth');
