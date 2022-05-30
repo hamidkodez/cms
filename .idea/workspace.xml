@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10334c6f-72c5-4e85-91c2-f4ce354af3f8" name="Changes" comment="updated version cms package">
-      <change afterPath="$PROJECT_DIR$/stubs/Middleware/CheckRole.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Auth/LoginController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Auth/LoginController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Auth/RegisterController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Auth/RegisterController.stub" afterDir="false" />
-    </list>
+    <list default="true" id="10334c6f-72c5-4e85-91c2-f4ce354af3f8" name="Changes" comment="updated version cms package" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,7 +75,7 @@
       <workItem from="1646312606285" duration="2247000" />
       <workItem from="1646316816388" duration="4255000" />
       <workItem from="1646385527809" duration="8890000" />
-      <workItem from="1653735712134" duration="9187000" />
+      <workItem from="1653735712134" duration="9498000" />
     </task>
     <task id="LOCAL-00001" summary="updated version cms package">
       <created>1646320039296</created>
