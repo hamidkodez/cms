@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="10334c6f-72c5-4e85-91c2-f4ce354af3f8" name="Changes" comment="updated version cms package">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Controllers/Auth/RegisterController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/Auth/RegisterController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Models/User.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Models/User.stub" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stubs/Views/frontend/includes/navigation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Views/frontend/includes/navigation.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/migrations/2022_02_24_101207_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/migrations/2022_02_24_101207_create_users_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +79,9 @@
       <workItem from="1646316816388" duration="4255000" />
       <workItem from="1646385527809" duration="8890000" />
       <workItem from="1653735712134" duration="12228000" />
+      <workItem from="1653988740656" duration="1520000" />
+      <workItem from="1653990669891" duration="962000" />
+      <workItem from="1654098327454" duration="592000" />
     </task>
     <task id="LOCAL-00001" summary="updated version cms package">
       <created>1646320039296</created>
