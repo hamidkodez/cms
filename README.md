@@ -15,6 +15,8 @@ It is provides a starting point for any laravel project (Frontend Backend system
 The Cms provided by Syed Hamid Ali Shah is located in the `syedhamidalishahofficial/cms` Composer package, which may be installed using Composer:
 
 ```bash
+cp server.php index.php
+cp public/.htaccess .htaccess
 composer require syedhamidalishahofficial/cms
 ```
 
