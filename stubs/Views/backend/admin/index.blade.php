@@ -68,7 +68,7 @@
                         </div>
                         <div class="card-body">
                             <div class="col-12 p-0">
-                                {!! Form::open(['route' => "account.information",'files' => true]) !!}
+                                {!! Form::open(['route' => "admin.accounts.information",'files' => true]) !!}
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="name">Name</label>
@@ -125,7 +125,7 @@
                         </div>
                         <div class="card-body">
                             <div class="col-12 p-0">
-                                {!! Form::open(['route' => "account.password",'files' => true]) !!}
+                                {!! Form::open(['route' => "admin.accounts.password",'files' => true]) !!}
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="current_password">Enter Current Password</label>

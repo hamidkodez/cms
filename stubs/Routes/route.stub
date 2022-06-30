@@ -51,69 +51,73 @@ Route::group(['prefix' => 'admin','as'=>'admin.'], function () {
         Route::post('login', [AdminController::class, 'login'])->name('auth');
     });
     Route::group(['middleware' => 'admin.auth'], function () {
-
         Route::view('dashboard', 'backend.dashboard.dashboard')->name('home');
         Route::view('/', 'backend.dashboard.dashboard');
-
-        Route::get('/account', [AdminController::class, 'account'])->name('account.settings');
-        Route::post('/change/information', [AdminController::class, 'basicInformation'])->name('account.information');
-        Route::post('/change/password', [AdminController::class, 'changePassword'])->name('account.password');
         Route::post('logout', [AdminController::class, 'logout'])->name('logout');
-
         Route::get('medias', [MediaController::class, 'index'])->name('media.index');
 
-        Route::any('users', [UserController::class, 'index'])->name('users.index');
-        Route::get('users/show/{var?}', [UserController::class, 'show'])->name('users.show');
-        Route::delete('users/delete/{var?}', [UserController::class, 'destroy'])->name('users.destroy');
-        Route::post('users/{id}/restore', [UserController::class, 'restore'])->name('user.restore');
+    //  Accounts
+        Route::group(['prefix' => 'accounts', 'as' => 'accounts.'], function () {
+            Route::get('/account', [AdminController::class, 'account'])->name('settings');
+            Route::post('/change/information', [AdminController::class, 'basicInformation'])->name('information');
+            Route::post('/change/password', [AdminController::class, 'changePassword'])->name('password');
+        });
 
-//  Categories
-    Route::group(['prefix' => 'categories', 'as' => 'categories.'], function () {
-      Route::any('/', [CategoryController::class, 'index'])->name('index');
-      Route::get('/create', [CategoryController::class, 'create'])->name('create');
-      Route::post('/store', [CategoryController::class, 'store'])->name('store');
-      Route::post('/{slug}/edit', [CategoryController::class, 'edit'])->name('edit');
-      Route::post('/{slug}/update', [CategoryController::class, 'update'])->name('update');
-    });
+    //  Users
+        Route::group(['prefix' => 'users', 'as' => 'users.'], function () {
+            Route::any('/', [UserController::class, 'index'])->name('index');
+            Route::get('/show/{var?}', [UserController::class, 'show'])->name('show');
+            Route::delete('/delete/{var?}', [UserController::class, 'destroy'])->name('destroy');
+            Route::post('/{id}/restore', [UserController::class, 'restore'])->name('restore');
+        });
 
-//  Tags
-    Route::group(['prefix' => 'tags', 'as' => 'tags.'], function () {
-        Route::any('', [TagController::class, 'index'])->name('index');
-        Route::get('/create', [TagController::class, 'create'])->name('create');
-        Route::post('/store', [TagController::class, 'store'])->name('store');
-        Route::post('/{slug}/edit', [TagController::class, 'edit'])->name('edit');
-        Route::post('/{slug}/update', [TagController::class, 'update'])->name('update');
-    });
+    //  Categories
+        Route::group(['prefix' => 'categories', 'as' => 'categories.'], function () {
+          Route::any('/', [CategoryController::class, 'index'])->name('index');
+          Route::get('/create', [CategoryController::class, 'create'])->name('create');
+          Route::post('/store', [CategoryController::class, 'store'])->name('store');
+          Route::post('/{slug}/edit', [CategoryController::class, 'edit'])->name('edit');
+          Route::post('/{slug}/update', [CategoryController::class, 'update'])->name('update');
+        });
 
-//  Posts
-    Route::group(['prefix' => 'posts', 'as' => 'posts.'], function () {
-      Route::any('/', [PostController::class, 'index'])->name('index');
-      Route::get('/create', [PostController::class, 'create'])->name('create');
-      Route::post('/store', [PostController::class, 'store'])->name('store');
-      Route::post('/{slug}/edit', [PostController::class, 'edit'])->name('edit');
-      Route::post('/update', [PostController::class, 'update'])->name('update');
-      Route::delete('/{id}/delete', [PostController::class, 'destroy'])->name('destroy');
-      Route::post('/{id}/restore', [PostController::class, 'restore'])->name('restore');
-    });
+    //  Tags
+        Route::group(['prefix' => 'tags', 'as' => 'tags.'], function () {
+            Route::any('', [TagController::class, 'index'])->name('index');
+            Route::get('/create', [TagController::class, 'create'])->name('create');
+            Route::post('/store', [TagController::class, 'store'])->name('store');
+            Route::post('/{slug}/edit', [TagController::class, 'edit'])->name('edit');
+            Route::post('/{slug}/update', [TagController::class, 'update'])->name('update');
+        });
 
-//  Menus
-    Route::group(['prefix' => 'menus', 'as' => 'menus.'], function () {
-      Route::get('/show/{menu:slug}', [MenuController::class, 'show'])->name('.show');
-      Route::post('/store', [MenuController::class, 'store'])->name('.store');
-      Route::post('/list', [MenuController::class, 'listMenu'])->name('listMenu');
-      Route::post('/delete', [MenuController::class, 'delete'])->name('.delete');
-    });
+    //  Posts
+        Route::group(['prefix' => 'posts', 'as' => 'posts.'], function () {
+          Route::any('/', [PostController::class, 'index'])->name('index');
+          Route::get('/create', [PostController::class, 'create'])->name('create');
+          Route::post('/store', [PostController::class, 'store'])->name('store');
+          Route::post('/{slug}/edit', [PostController::class, 'edit'])->name('edit');
+          Route::post('/update', [PostController::class, 'update'])->name('update');
+          Route::delete('/{id}/delete', [PostController::class, 'destroy'])->name('destroy');
+          Route::post('/{id}/restore', [PostController::class, 'restore'])->name('restore');
+        });
 
-//  Pages
-    Route::group(['prefix' => 'pages', 'as' => 'pages.'], function () {
-        Route::any('/', [PageController::class, 'index'])->name('index');
-        Route::get('/create', [PageController::class, 'create'])->name('create');
-        Route::post('/edit/{page:slug}', [PageController::class, 'create'])->name('edit');
-        Route::put('/update/{page}', [PageController::class, 'update'])->name('update');
-        Route::delete('/{id}/disable', [PageController::class, 'disable'])->name('disable');
-        Route::delete('/{id}/destroy', [PageController::class, 'destroy'])->name('destroy');
-        Route::post('/{id}/restore', [PageController::class, 'restore'])->name('restore');
-    });
+    //  Menus
+        Route::group(['prefix' => 'menus', 'as' => 'menus.'], function () {
+          Route::get('/show/{menu:slug}', [MenuController::class, 'show'])->name('.show');
+          Route::post('/store', [MenuController::class, 'store'])->name('.store');
+          Route::post('/list', [MenuController::class, 'listMenu'])->name('listMenu');
+          Route::post('/delete', [MenuController::class, 'delete'])->name('.delete');
+        });
+
+    //  Pages
+        Route::group(['prefix' => 'pages', 'as' => 'pages.'], function () {
+            Route::any('/', [PageController::class, 'index'])->name('index');
+            Route::get('/create', [PageController::class, 'create'])->name('create');
+            Route::post('/edit/{page:slug}', [PageController::class, 'create'])->name('edit');
+            Route::put('/update/{page}', [PageController::class, 'update'])->name('update');
+            Route::delete('/{id}/disable', [PageController::class, 'disable'])->name('disable');
+            Route::delete('/{id}/destroy', [PageController::class, 'destroy'])->name('destroy');
+            Route::post('/{id}/restore', [PageController::class, 'restore'])->name('restore');
+        });
 
         Route::post('getChildPageElement', [PageController::class, 'getChildPageElement'])->name('getChildPageElement');
         Route::post('getElement', [PageController::class, 'getElement'])->name('getElement');
