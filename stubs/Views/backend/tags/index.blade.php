@@ -86,7 +86,7 @@
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Tags</h1>
-            <a class="btn btn-sm btn-primary shadow-sm" href="{{route('admin.tag.create')}}">Create New Tag</a>
+            <a class="btn btn-sm btn-primary shadow-sm" href="{{route('admin.tags.create')}}">Create New Tag</a>
         </div>
 
         <!-- DataTales Example -->

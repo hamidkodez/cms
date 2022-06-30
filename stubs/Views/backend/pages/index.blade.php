@@ -86,7 +86,7 @@
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Pages</h1>
-            <a href="{{route('page.create')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Add
+            <a href="{{route('admin.pages.create')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Add
                 New Page</a>
         </div>
 
@@ -122,7 +122,7 @@
                 "processing": true,
                 "serverSide": true,
                 "ajax":{
-                    "url": "{{ URL::route('pages.index') }}",
+                    "url": "{{ URL::route('admin.pages.index') }}",
                     "dataType": "json",
                     "type": "POST",
                     "data":{ _token: "{{csrf_token()}}"}

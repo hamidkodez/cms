@@ -47,18 +47,18 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::group(['prefix' => 'admin','as'=>'admin.'], function () {
     Route::group(['middleware' => 'admin.guest'], function () {
-        Route::view('login', 'backend.login.login')->name('admin.login');
-        Route::post('login', [AdminController::class, 'login'])->name('admin.auth');
+        Route::view('login', 'backend.login.login')->name('login');
+        Route::post('login', [AdminController::class, 'login'])->name('auth');
     });
     Route::group(['middleware' => 'admin.auth'], function () {
 
-        Route::view('dashboard', 'backend.dashboard.dashboard')->name('admin.home');
+        Route::view('dashboard', 'backend.dashboard.dashboard')->name('home');
         Route::view('/', 'backend.dashboard.dashboard');
 
         Route::get('/account', [AdminController::class, 'account'])->name('account.settings');
         Route::post('/change/information', [AdminController::class, 'basicInformation'])->name('account.information');
         Route::post('/change/password', [AdminController::class, 'changePassword'])->name('account.password');
-        Route::post('logout', [AdminController::class, 'logout'])->name('admin.logout');
+        Route::post('logout', [AdminController::class, 'logout'])->name('logout');
 
         Route::get('medias', [MediaController::class, 'index'])->name('media.index');
 
@@ -68,39 +68,60 @@ Route::group(['prefix' => 'admin','as'=>'admin.'], function () {
         Route::post('users/{id}/restore', [UserController::class, 'restore'])->name('user.restore');
 
 //  Categories
-        Route::any('categories/', [CategoryController::class, 'index'])->name('admin.categories.index');
-        Route::get('categories/create', [CategoryController::class, 'create'])->name('admin.categories.create');
-        Route::post('categories/store', [CategoryController::class, 'store'])->name('admin.categories.store');
-        Route::post('categories/{slug}/edit', [CategoryController::class, 'edit'])->name('admin.categories.edit');
-        Route::post('categories/{slug}/update', [CategoryController::class, 'update'])->name('admin.categories.update');
+    Route::group(['prefix' => 'categories', 'as' => 'categories.'], function () {
+      Route::any('/', [CategoryController::class, 'index'])->name('index');
+      Route::get('/create', [CategoryController::class, 'create'])->name('create');
+      Route::post('/store', [CategoryController::class, 'store'])->name('store');
+      Route::post('/{slug}/edit', [CategoryController::class, 'edit'])->name('edit');
+      Route::post('/{slug}/update', [CategoryController::class, 'update'])->name('update');
+    });
 
 //  Tags
-        Route::any('tags', [TagController::class, 'index'])->name('admin.tags.index');
-        Route::get('tag/create', [TagController::class, 'create'])->name('admin.tag.create');
-        Route::post('tag/store', [TagController::class, 'store'])->name('admin.tag.store');
-        Route::post('tag/{slug}/edit', [TagController::class, 'edit'])->name('admin.tag.edit');
-        Route::post('tag/{slug}/update', [TagController::class, 'update'])->name('admin.tag.update');
+    Route::group(['prefix' => 'tags', 'as' => 'tags.'], function () {
+        Route::any('', [TagController::class, 'index'])->name('index');
+        Route::get('/create', [TagController::class, 'create'])->name('create');
+        Route::post('/store', [TagController::class, 'store'])->name('store');
+        Route::post('/{slug}/edit', [TagController::class, 'edit'])->name('edit');
+        Route::post('/{slug}/update', [TagController::class, 'update'])->name('update');
+    });
 
-        Route::any('posts/', [PostController::class, 'index'])->name('admin.posts.index');
-        Route::get('post/create', [PostController::class, 'create'])->name('admin.post.create');
-        Route::post('post/store', [PostController::class, 'store'])->name('admin.post.store');
-        Route::post('post/{slug}/edit', [PostController::class, 'edit'])->name('admin.post.edit');
-        Route::post('post/update', [PostController::class, 'update'])->name('admin.post.update');
-        Route::delete('post/{id}/delete', [PostController::class, 'destroy'])->name('admin.post.destroy');
-        Route::post('post/{id}/restore', [PostController::class, 'restore'])->name('admin.post.restore');
+//  Posts
+    Route::group(['prefix' => 'posts', 'as' => 'posts.'], function () {
+      Route::any('/', [PostController::class, 'index'])->name('index');
+      Route::get('/create', [PostController::class, 'create'])->name('create');
+      Route::post('/store', [PostController::class, 'store'])->name('store');
+      Route::post('/{slug}/edit', [PostController::class, 'edit'])->name('edit');
+      Route::post('/update', [PostController::class, 'update'])->name('update');
+      Route::delete('/{id}/delete', [PostController::class, 'destroy'])->name('destroy');
+      Route::post('/{id}/restore', [PostController::class, 'restore'])->name('restore');
+    });
 
-        Route::get('menu/show/{menu:slug}', [MenuController::class, 'show'])->name('menu.show');
-        Route::post('menu/store', [MenuController::class, 'store'])->name('menu.store');
-        Route::post('menu/list', [MenuController::class, 'listMenu'])->name('listMenu');
-        Route::post('menu/delete', [MenuController::class, 'delete'])->name('menu.delete');
+//  Menus
+    Route::group(['prefix' => 'menus', 'as' => 'menus.'], function () {
+      Route::get('/show/{menu:slug}', [MenuController::class, 'show'])->name('.show');
+      Route::post('/store', [MenuController::class, 'store'])->name('.store');
+      Route::post('/list', [MenuController::class, 'listMenu'])->name('listMenu');
+      Route::post('/delete', [MenuController::class, 'delete'])->name('.delete');
+    });
 
-        Route::any('pages', [PageController::class, 'index'])->name('pages.index');
-        Route::get('page/create', [PageController::class, 'create'])->name('page.create');
-        Route::post('page/edit/{page:slug}', [PageController::class, 'create'])->name('page.edit');
-        Route::put('page/update/{page}', [PageController::class, 'update'])->name('page.update');
-        Route::delete('page/{id}/disable', [PageController::class, 'disable'])->name('page.disable');
-        Route::delete('page/{id}/destroy', [PageController::class, 'destroy'])->name('page.destroy');
-        Route::post('page/{id}/restore', [PageController::class, 'restore'])->name('page.restore');
+//  Pages
+    Route::group(['prefix' => 'pages', 'as' => 'pages.'], function () {
+        Route::any('/', [PageController::class, 'index'])->name('index');
+        Route::get('/create', [PageController::class, 'create'])->name('create');
+        Route::post('/edit/{page:slug}', [PageController::class, 'create'])->name('edit');
+        Route::put('/update/{page}', [PageController::class, 'update'])->name('update');
+        Route::delete('/{id}/disable', [PageController::class, 'disable'])->name('disable');
+        Route::delete('/{id}/destroy', [PageController::class, 'destroy'])->name('destroy');
+        Route::post('/{id}/restore', [PageController::class, 'restore'])->name('restore');
+    });
+
+//         Route::any('pages', [PageController::class, 'index'])->name('pages.index');
+//         Route::get('page/create', [PageController::class, 'create'])->name('page.create');
+//         Route::post('page/edit/{page:slug}', [PageController::class, 'create'])->name('page.edit');
+//         Route::put('page/update/{page}', [PageController::class, 'update'])->name('page.update');
+//         Route::delete('page/{id}/disable', [PageController::class, 'disable'])->name('page.disable');
+//         Route::delete('page/{id}/destroy', [PageController::class, 'destroy'])->name('page.destroy');
+//         Route::post('page/{id}/restore', [PageController::class, 'restore'])->name('page.restore');
 
         Route::post('getChildPageElement', [PageController::class, 'getChildPageElement'])->name('getChildPageElement');
         Route::post('getElement', [PageController::class, 'getElement'])->name('getElement');

@@ -32,7 +32,7 @@
                 <h6 class="collapse-header">Custom Components:</h6>
                 @isset($menus)
                     @foreach($menus as $menu)
-                        <a class="collapse-item text-capitalize" href="{{ route('menu.show',$menu->slug) }}">{{ $menu->title.' Menu' }}</a>
+                        <a class="collapse-item text-capitalize" href="{{ route('admin.menus.show',$menu->slug) }}">{{ $menu->title.' Menu' }}</a>
                     @endforeach
                 @endisset
             </div>
@@ -47,8 +47,8 @@
         </a>
         <div id="collapsePage" class="collapse" aria-labelledby="headingPost" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{route('pages.index')}}">Pages</a>
-                <a class="collapse-item" href="{{route('elements.index')}}">Elements</a>
+                <a class="collapse-item" href="{{route('admin.pages.index')}}">Pages</a>
+                <a class="collapse-item" href="{{route('admin.elements.index')}}">Elements</a>
             </div>
         </div>
     </li>
@@ -64,7 +64,7 @@
 
     <!-- Nav Item - Users -->
     <li class="nav-item">
-        <a class="nav-link" href="{{route('users.index')}}">
+        <a class="nav-link" href="{{route('admin.users.index')}}">
             <i class="fas fa-fw fa-user"></i>
             <span>Users</span>
         </a>
@@ -79,7 +79,7 @@
         <div id="collapsePost" class="collapse" aria-labelledby="headingPost" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{route('admin.posts.index')}}">All Posts</a>
-                <a class="collapse-item" href="{{route('admin.post.create')}}">Create Posts</a>
+                <a class="collapse-item" href="{{route('admin.posts.create')}}">Create Posts</a>
             </div>
         </div>
     </li>

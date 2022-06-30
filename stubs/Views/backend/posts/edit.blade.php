@@ -89,7 +89,7 @@
                 <div class="col-12 p-0">
 
                     <div class="row m-0">
-                        {!! Form::open(["route" => ["admin.post.update"],"id"=>"editPost","files"=> true,"class"=>"w-100","method"=>"Post"]) !!}
+                        {!! Form::open(["route" => ["admin.posts.update"],"id"=>"editPost","files"=> true,"class"=>"w-100","method"=>"Post"]) !!}
                         <input type="hidden" value="{{$post->id}}" name="postId" id="postId">
                         <div class="col-md-12">
                             <div class="form-group">

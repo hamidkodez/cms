@@ -59,7 +59,7 @@
         <div class="card-body">
           <div class="col-12 p-0">
             <div class="row m-0">
-              {!! Form::open(["route" => ["page.update",$page->slug],"files"=> true,"class"=>"w-100","method"=>"PUT"]) !!}
+              {!! Form::open(["route" => ["admin.pages.update",$page->slug],"files"=> true,"class"=>"w-100","method"=>"PUT"]) !!}
               <input type="hidden" value="{{$page->id}}" name="pageId" id="pageId">
               <div class="row m-0">
                 <div class="col-md-12 text-right">

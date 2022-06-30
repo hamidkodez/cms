@@ -229,7 +229,7 @@
                                                                                 <div class="panel-heading">
 
                                                                                     <h4 class="panel-title">
-                                                                                        <a href="{{route('menu.show',$menu->slug)}}">
+                                                                                        <a href="{{route('admin.menus.show',$menu->slug)}}">
                                                                                     <span style="padding-right: 2%;"
                                                                                               class="glyphicon glyphicon-folder-close"></span>{{$menu->title}} Menu</a>
                                                                                     </h4>

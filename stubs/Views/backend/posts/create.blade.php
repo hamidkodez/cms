@@ -87,7 +87,7 @@
                 <div class="col-12 p-0">
 
                     <div class="row m-0">
-                        {!! Form::open(["route" => ["admin.post.store"],"id"=>"storePost","files"=> true,"class"=>"w-100","method"=>"Post"]) !!}
+                        {!! Form::open(["route" => ["admin.posts.store"],"id"=>"storePost","files"=> true,"class"=>"w-100","method"=>"Post"]) !!}
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="title">Title</label>

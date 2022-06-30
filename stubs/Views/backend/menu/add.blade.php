@@ -761,7 +761,7 @@
             if (pages.length === 0) {
                 alert('Please select a page')
             } else {
-                $.post('{{ route('listMenu') }}', {
+                $.post('{{ route('admin.menus.listMenu') }}', {
                     _token: '{{ csrf_token() }}',
                     page_arr: pages,
                     menuId: '{{ $menu_state->id }}'
@@ -821,7 +821,7 @@
                     final_arr.push(menu_arr)
                 }
             });
-            $.post('{{ route('menu.store') }}', {
+            $.post('{{ route('admin.menus.store') }}', {
                     _token: '{{ csrf_token() }}',
                     content: content,
                     menuId: '{{ $menu_state->id }}',
@@ -851,7 +851,7 @@
             $(element).closest('li').remove();
             var id = $(element).closest('li').attr('data-id');
             $.ajax({
-                url: "{{ URL::route('menu.delete') }}",
+                url: "{{ URL::route('admin.menus.delete') }}",
                 type: 'post',
                 data: {
                     "_token": "{{ csrf_token() }}",
