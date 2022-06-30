@@ -115,14 +115,6 @@ Route::group(['prefix' => 'admin','as'=>'admin.'], function () {
         Route::post('/{id}/restore', [PageController::class, 'restore'])->name('restore');
     });
 
-//         Route::any('pages', [PageController::class, 'index'])->name('pages.index');
-//         Route::get('page/create', [PageController::class, 'create'])->name('page.create');
-//         Route::post('page/edit/{page:slug}', [PageController::class, 'create'])->name('page.edit');
-//         Route::put('page/update/{page}', [PageController::class, 'update'])->name('page.update');
-//         Route::delete('page/{id}/disable', [PageController::class, 'disable'])->name('page.disable');
-//         Route::delete('page/{id}/destroy', [PageController::class, 'destroy'])->name('page.destroy');
-//         Route::post('page/{id}/restore', [PageController::class, 'restore'])->name('page.restore');
-
         Route::post('getChildPageElement', [PageController::class, 'getChildPageElement'])->name('getChildPageElement');
         Route::post('getElement', [PageController::class, 'getElement'])->name('getElement');
         Route::post('addSection', [PageController::class, 'addSection'])->name('addSection');
