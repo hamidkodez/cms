@@ -73,6 +73,13 @@ php artisan migrate:fresh --seed  #To Migrate and seeds the data in your databas
 ],
 ```
 
+// this to AppServiceProvider before class start
+
+```
+use App\Models\Menu;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\View;
+```
 // this to AppServiceProvider inside to the boot() function
 ```
 Schema::defaultStringLength(191);    
@@ -85,7 +92,6 @@ View::share('header', $header);
 
 $footer = Menu::whereSlug('footer')->orderBy('id', 'ASC')->first();
 View::share('footer', $footer);
-
 ```
 ## Contributing
 
