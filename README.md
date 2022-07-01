@@ -72,6 +72,21 @@ php artisan migrate:fresh --seed  #To Migrate and seeds the data in your databas
     'throttle' => 60,
 ],
 ```
+
+// this to AppServiceProvider inside to the boot() function
+```
+Schema::defaultStringLength(191);    
+
+$menus = Menu::orderBy('id', 'ASC')->get();
+View::share('menus', $menus);
+
+$header = Menu::whereSlug('header')->with('MenuItem')->first();
+View::share('header', $header);  
+
+$footer = Menu::whereSlug('footer')->orderBy('id', 'ASC')->first();
+View::share('footer', $footer);
+
+```
 ## Contributing
 
 Thank you for considering contributing to Laravel! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
