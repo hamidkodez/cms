@@ -102,10 +102,10 @@ Route::group(['prefix' => 'admin','as'=>'admin.'], function () {
 
     //  Menus
         Route::group(['prefix' => 'menus', 'as' => 'menus.'], function () {
-          Route::get('/show/{menu:slug}', [MenuController::class, 'show'])->name('.show');
-          Route::post('/store', [MenuController::class, 'store'])->name('.store');
+          Route::get('/show/{menu:slug}', [MenuController::class, 'show'])->name('show');
+          Route::post('/store', [MenuController::class, 'store'])->name('store');
           Route::post('/list', [MenuController::class, 'listMenu'])->name('listMenu');
-          Route::post('/delete', [MenuController::class, 'delete'])->name('.delete');
+          Route::post('/delete', [MenuController::class, 'delete'])->name('delete');
         });
 
     //  Pages

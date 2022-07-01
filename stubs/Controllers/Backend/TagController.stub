@@ -48,7 +48,7 @@ class TagController extends Controller
             $data = array();
             if (!empty($tags)) {
                 foreach ($tags as $tag) {
-                    $edit = route('admin.tag.edit', $tag->slug);
+                    $edit = route('admin.tags.edit', $tag->slug);
                     $image = (isset($tag->image) ? asset($tag->image) : asset('/public/storage/placeholder.jpg'));
                     $csrf = csrf_token();
                     $nestedData['id'] = $tag->id;
