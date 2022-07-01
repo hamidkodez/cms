@@ -51,7 +51,7 @@ class PageController extends Controller
       $data = array();
       if (!empty($pages)) {
         foreach ($pages as $page) {
-          $edit = route('admin.pages', $page->slug);
+          $edit = route('admin.pages.edit', $page->slug);
           $disable = route('admin.pages.disable', $page->id);
           $destroy = route('admin.pages.destroy', $page->id);
           $restore = route('admin.pages.restore', $page->id);
@@ -133,7 +133,7 @@ class PageController extends Controller
       ]);
       $pageId = $page->id;
     }
-    $page = Page::whereId($pageId)->first();
+    $page = Page::withTrashed()->whereId($pageId)->first();
     $page->isPage = $isPage;
     $type = DB::select(DB::raw("SHOW COLUMNS FROM pages WHERE Field = 'page_type'"))[0]->Type;
     preg_match_all("/'([^']+)'/", $type, $matches);
@@ -157,7 +157,7 @@ class PageController extends Controller
   {
     $data = $request->except(['_method', '_token']);
     $pageId = $data['pageId'];
-    $page = Page::whereId($pageId)->first();
+    $page = Page::withTrashed()->whereId($pageId)->first();
     $page->title = $data['title'];
     $page->page_type = $data['page_type'];
     $page->meta_title = $data['meta_title'];
@@ -185,7 +185,7 @@ class PageController extends Controller
     $page->banner = $content;
     $page->update();
     if ($page) {
-      return redirect()->route('pages.index')->with(['success' => 'Page updated Successfully..!']);
+      return redirect()->route('admin.pages.index')->with(['success' => 'Page updated Successfully..!']);
     } else {
       return redirect()->back()->with(['error' => 'Something went wrong....!']);
     }

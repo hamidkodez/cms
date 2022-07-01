@@ -50,7 +50,7 @@
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Update Element</h1>
-            <a href="{{route('elements.index')}}"
+            <a href="{{route('admin.elements.index')}}"
                class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Back</a>
         </div>
 
@@ -64,7 +64,7 @@
 
                 <div class="row">
                     <div class="col-6">
-                        <form action="{{ route('element.update') }}" id="storeElement" method="post">
+                        <form action="{{ route('admin.element.update') }}" id="storeElement" method="post">
                             @csrf
                             <input type="hidden" name="elementId" id="elementId" value="{{($element->id) ? $element->id : ''}}">
                             <div class="form-group">
@@ -293,7 +293,7 @@
                 data: formData,
                 dataType: 'json',
                 type: 'post',
-                url: "{{ URL::route('field.create') }}",
+                url: "{{ URL::route('admin.field.create') }}",
                 beforeSend: function () {
                     runLoader();
                 },
@@ -313,7 +313,7 @@
         function deleteField(elem) {
             var id = $(elem).data("id");
             $.ajax({
-                url: "{{ URL::route('field.delete') }}",
+                url: "{{ URL::route('admin.field.delete') }}",
                 type: 'post',
                 data: {
                     "_token": "{{ csrf_token() }}",
@@ -350,7 +350,7 @@
                 data: formData,
                 dataType: 'json',
                 type: 'post',
-                url: "{{ URL::route('field.update') }}",
+                url: "{{ URL::route('admin.field.update') }}",
                 beforeSend: function () {
                     runLoader();
                 },
@@ -368,7 +368,7 @@
         function getElementField() {
             var elementId = $('#elementId').val();
             $.ajax({
-                url: "{{ URL::route('field.get') }}",
+                url: "{{ URL::route('admin.field.get') }}",
                 type: 'post',
                 data: {
                     "_token": "{{ csrf_token() }}",

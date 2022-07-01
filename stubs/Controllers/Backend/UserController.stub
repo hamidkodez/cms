@@ -43,9 +43,9 @@ class UserController extends Controller
       if (!empty($users)) {
         foreach ($users as $user) {
 
-          $show = route('users.show', $user->id);
-          $destroy = route('users.destroy', $user->id);
-          $restore = route('user.restore', $user->id);
+          $show = route('admin.users.show', $user->id);
+          $destroy = route('admin.users.destroy', $user->id);
+          $restore = route('admin.user.restore', $user->id);
 
           $csrf = csrf_token();
 

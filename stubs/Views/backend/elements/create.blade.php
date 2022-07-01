@@ -50,7 +50,7 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
       <h1 class="h3 mb-0 text-gray-800">Create New Element</h1>
-      <a href="{{route('elements.index')}}"
+      <a href="{{route('admin.elements.index')}}"
          class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Back</a>
     </div>
 
@@ -62,7 +62,7 @@
       <div class="card-body">
         <div class="row">
           <div class="col-6">
-            <form action="{{ route('element.store') }}" id="storeElement" method="post">
+            <form action="{{ route('admin.element.store') }}" id="storeElement" method="post">
               @csrf
               <div class="form-group">
                 <label for="title">Title</label>

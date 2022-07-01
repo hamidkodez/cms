@@ -6,10 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="10334c6f-72c5-4e85-91c2-f4ce354af3f8" name="Changes" comment="updated version cms package">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stubs/Controllers/Backend/ElementController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/Backend/ElementController.stub" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stubs/Controllers/Backend/PageController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/Backend/PageController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Views/backend/pages/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Views/backend/pages/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Views/backend/pages/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Views/backend/pages/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Views/backend/pages/last-backup-create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Views/backend/pages/last-backup-create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stubs/Controllers/Backend/PostController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/Backend/PostController.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stubs/Controllers/Backend/UserController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/Backend/UserController.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stubs/Views/backend/elements/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Views/backend/elements/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stubs/Views/backend/elements/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Views/backend/elements/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stubs/Views/backend/elements/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Views/backend/elements/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stubs/Views/backend/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Views/backend/users/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +91,7 @@
       <workItem from="1654098327454" duration="592000" />
       <workItem from="1654522236588" duration="1247000" />
       <workItem from="1654597482902" duration="1289000" />
-      <workItem from="1656583670857" duration="7120000" />
+      <workItem from="1656583670857" duration="10599000" />
     </task>
     <task id="LOCAL-00001" summary="updated version cms package">
       <created>1646320039296</created>

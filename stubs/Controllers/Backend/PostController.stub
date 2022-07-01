@@ -46,9 +46,9 @@ class PostController extends Controller
             $data = array();
             if (!empty($posts)) {
                 foreach ($posts as $post) {
-                    $edit = route('admin.post.edit', $post->slug);
-                    $destroy = route('admin.post.destroy', $post->id);
-                    $restore = route('admin.post.restore', $post->id);
+                    $edit = route('admin.posts.edit', $post->slug);
+                    $destroy = route('admin.posts.destroy', $post->id);
+                    $restore = route('admin.posts.restore', $post->id);
                     $image = (isset($post->thumbnail) ? asset($post->thumbnail) : asset('/public/storage/placeholder.jpg'));
                     $csrf = csrf_token();
                     $nestedData['id'] = $post->id;
@@ -146,7 +146,7 @@ class PostController extends Controller
     public function edit($slug)
     {
         $tags = Tag::orderBy('created_at', 'DESC')->get();
-        $post = Post::where('slug', $slug)->with('category','tags')->first();
+        $post = Post::withTrashed()->where('slug', $slug)->with('category','tags')->first();
         $posttags = [];
         if (isset($post->tags)) {
             foreach ($post->tags as $tag) {
@@ -160,7 +160,7 @@ class PostController extends Controller
 
     public function update(Request $request)
     {
-        $post = Post::where('id', $request->postId)->first();
+        $post = Post::withTrashed()->where('id', $request->postId)->first();
         if ($request->hasFile('thumbnail') != null) {
             $imageFile = sprintf('post_%s.jpg', random_int(1, 1000));
             $path = $request->file('thumbnail')->storeAs('/posts', $imageFile, 'public');

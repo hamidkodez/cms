@@ -40,8 +40,8 @@ class ElementController extends Controller
       $data = array();
       if (!empty($elements)) {
         foreach ($elements as $element) {
-          $edit = route('element.edit', $element->id);
-          $delete = route('elementDelete');
+          $edit = route('admin.element.edit', $element->id);
+          $delete = route('admin.elementDelete');
           $csrf = csrf_token();
           $nestedData['id'] = $element->id;
           $nestedData['title'] = $element->title;
@@ -106,7 +106,7 @@ class ElementController extends Controller
       $element->parentId = $parentId;
       $element->template = $request->template;
       if ($element->save()) {
-        return redirect()->route('elements.index')->with(['success' => 'Element Created Successfully..!']);
+        return redirect()->route('admin.elements.index')->with(['success' => 'Element Created Successfully..!']);
       } else {
         return redirect()->back()->with(['error' => 'Something went wrong....!']);
       }
@@ -147,7 +147,7 @@ class ElementController extends Controller
       $element->parentId = $parentId;
       $element->template = $request->template;
       if ($element->save()) {
-        return redirect()->route('elements.index')->with(['success' => 'Element Created Successfully..!']);
+        return redirect()->route('admin.elements.index')->with(['success' => 'Element Created Successfully..!']);
       } else {
         return redirect()->back()->with(['error' => 'Something went wrong....!']);
       }

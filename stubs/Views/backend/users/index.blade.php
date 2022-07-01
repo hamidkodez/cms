@@ -202,7 +202,7 @@
                 // "scrollX": true,
                 "pagingType": "full_numbers",
                 "ajax": {
-                    "url": "{{ URL::route('users.index') }}",
+                    "url": "{{ URL::route('admin.users.index') }}",
                     "dataType": "json",
                     "type": "POST",
                     "data": {_token: "{{csrf_token()}}"}
