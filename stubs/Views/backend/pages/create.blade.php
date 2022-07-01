@@ -36,7 +36,7 @@
   <!-- Page Heading -->
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">{{ ($page->isPage == 1) ?  'Update Page' : 'New Page' }}</h1>
-    <a href="{{route('pages.index')}}"
+    <a href="{{route('admin.pages.index')}}"
        class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Back</a>
   </div>
   <!-- Content Column -->
@@ -283,7 +283,7 @@
       function getPageSections() {
           var pageId = $("#pageId").val();
           $.ajax({
-              url: "{{ URL::route('getPageSections') }}",
+              url: "{{ URL::route('admin.getPageSections') }}",
               type: 'post',
               data: {
                   "_token": "{{ csrf_token() }}",
@@ -317,7 +317,7 @@
               $(this).removeClass('updated');
           });
           $.ajax({
-              url: "{{ URL::route('parent.order') }}",
+              url: "{{ URL::route('admin.parent.order') }}",
               type: 'post',
               data: {
                   "_token": "{{ csrf_token() }}",
@@ -353,7 +353,7 @@
           var sid = $(elem).data("sid");
           var type = $(elem).data("type");
           $.ajax({
-              url: "{{ URL::route('getElement') }}",
+              url: "{{ URL::route('admin.getElement') }}",
               type: 'post',
               data: {
                   "_token": "{{ csrf_token() }}",
@@ -385,7 +385,7 @@
           var parentId = $(elem).data("parentid");
           var sid = $(elem).data("sid");
           $.ajax({
-              url: "{{ URL::route('addSection') }}",
+              url: "{{ URL::route('admin.addSection') }}",
               type: 'post',
               data: {
                   "_token": "{{ csrf_token() }}",
@@ -416,7 +416,7 @@
           var id = $(elem).data("id");
           if (confirm('Are you sure you want to delete?')) {
               $.ajax({
-                  url: "{{ URL::route('delete.section') }}",
+                  url: "{{ URL::route('admin.delete.section') }}",
                   type: 'post',
                   data: {
                       "_token": "{{ csrf_token() }}",
@@ -447,7 +447,7 @@
           var width = parent.find("#width").val();
           parent.removeClass('show')
           $.ajax({
-              url: "{{ URL::route('changeSelector') }}",
+              url: "{{ URL::route('admin.changeSelector') }}",
               type: 'post',
               data: {
                   "_token": "{{ csrf_token() }}",
@@ -475,7 +475,7 @@
           var parentId = $(elem).data("parentid"); // page_sectionId
           var sid = $(elem).data("sid"); // sub_section
           $.ajax({
-              url: "{{ URL::route('storeInnerElement') }}",
+              url: "{{ URL::route('admin.storeInnerElement') }}",
               type: 'post',
               data: {
                   "_token": "{{ csrf_token() }}",
@@ -507,7 +507,7 @@
           var prentId = $(elem).data("parentid");
           if (confirm('Are you sure you want to delete?')) {
               $.ajax({
-                  url: "{{ URL::route('element.delete') }}",
+                  url: "{{ URL::route('admin.element.delete') }}",
                   type: 'post',
                   data: {
                       "_token": "{{ csrf_token() }}",
@@ -541,7 +541,7 @@
       function editInnerElement(elem) {
           var id = $(elem).data("id");
           $.ajax({
-              url: "{{ URL::route('editInnerElement') }}" + "/" + id,
+              url: "{{ URL::route('admin.editInnerElement') }}" + "/" + id,
               type: 'get',
               "_token": "{{ csrf_token() }}",
               beforeSend: function () {
@@ -568,7 +568,7 @@
               data: data,
               dataType: 'json',
               type: 'post',
-              url: "{{ URL::route('updateInnerElement') }}",
+              url: "{{ URL::route('admin.updateInnerElement') }}",
               beforeSend: function () {
                   runLoader();
               },
@@ -596,7 +596,7 @@
       function storeChildPe(elem) {
           var pageEid = $(elem).data("pageeid");
           $.ajax({
-              url: "{{ URL::route('storeChildPe') }}",
+              url: "{{ URL::route('admin.storeChildPe') }}",
               type: 'post',
               data: {
                   "_token": "{{ csrf_token() }}",
@@ -620,7 +620,7 @@
 
       function getChildPageElement(id) {
           $.ajax({
-              url: "{{ URL::route('getChildPageElement') }}",
+              url: "{{ URL::route('admin.getChildPageElement') }}",
               type: 'post',
               data: {
                   "_token": "{{ csrf_token() }}",

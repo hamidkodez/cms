@@ -51,10 +51,10 @@ class PageController extends Controller
       $data = array();
       if (!empty($pages)) {
         foreach ($pages as $page) {
-          $edit = route('page.edit', $page->slug);
-          $disable = route('page.disable', $page->id);
-          $destroy = route('page.destroy', $page->id);
-          $restore = route('page.restore', $page->id);
+          $edit = route('admin.pages', $page->slug);
+          $disable = route('admin.pages.disable', $page->id);
+          $destroy = route('admin.pages.destroy', $page->id);
+          $restore = route('admin.pages.restore', $page->id);
           $csrf = csrf_token();
 
           $nestedData['id'] = $page->id;

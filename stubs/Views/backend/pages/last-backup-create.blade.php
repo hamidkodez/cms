@@ -31,7 +31,7 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
       <h1 class="h3 mb-0 text-gray-800">{{ ($page->isPage == 1) ?  'Update Page' : 'New Page' }}</h1>
-      <a href="{{route('pages.index')}}"
+      <a href="{{route('admin.pages.index')}}"
          class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Back</a>
     </div>
     <!-- Content Column -->
@@ -285,7 +285,7 @@
               $(this).removeClass('updated');
           });
           $.ajax({
-              url: "{{ URL::route('parent.order') }}",
+              url: "{{ URL::route('admin.parent.order') }}",
               type: 'post',
               data: {
                   "_token": "{{ csrf_token() }}",
