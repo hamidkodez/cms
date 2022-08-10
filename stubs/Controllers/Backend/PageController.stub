@@ -280,7 +280,7 @@ class PageController extends Controller
     if (isset($page_element)) {
       $childrenIds = explode(',', $page_element->children_ids);
       $childrens = PageElements::whereIn('id', $childrenIds)->with('content', 'element')->orderBy('id', 'asc')->get();
-      $options = view("Backend.pages.get_child_element", compact('childrens', 'page_element'))->render();
+      $options = view("backend.pages.get_child_element", compact('childrens', 'page_element'))->render();
       return response()->json(['success' => $options]);
     } else {
       return response()->json(['error' => 'something wrong']);
@@ -371,7 +371,7 @@ class PageController extends Controller
     $sections = PageElementSection::orderBy('id', 'asc')->get();
     $elements = Element::where('type', '!=', 'daughter')->orWhereNull('type')->with('fields.content')->get();
     if (isset($sections)) {
-      $options = view("Backend.pages.get_element", compact('sections', 'elements', 'data'))->render();
+      $options = view("backend.pages.get_element", compact('sections', 'elements', 'data'))->render();
       return response()->json(['success' => $options]);
     } else {
       return response()->json(['error' => 'Something went wrong....!']);
@@ -383,7 +383,7 @@ class PageController extends Controller
     $data = $request->except(['_method', '_token']);
     $pageSections = PageSection::where('page_id', $data['pageId'])->where('parent_id', 0)->orderBy('order', 'asc')->with('section.PageSubSections', 'subsection.PageElements', 'PageElements')->get();
     if (isset($pageSections)) {
-      $options = view("Backend.pages.get_page_sections", compact('pageSections'))->render();
+      $options = view("backend.pages.get_page_sections", compact('pageSections'))->render();
       return response()->json(['success' => $options]);
     }
   }
@@ -436,7 +436,7 @@ class PageController extends Controller
     $pageElements = PageElements::where('id', $id)->with('content.field', 'element.fields')->first();
     $childrenIds = explode(',', $pageElements->children_ids);
     $childrens = PageElements::whereIn('id', $childrenIds)->with('content', 'element')->orderBy('id', 'asc')->get();
-    $options = view("Backend.pages.edit_elements", compact('pageElements', 'childrens'))->render();
+    $options = view("backend.pages.edit_elements", compact('pageElements', 'childrens'))->render();
     return $options;
   }
 

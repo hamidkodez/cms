@@ -198,7 +198,7 @@ class ElementController extends Controller
     $fields_type = $matches[1];
     $element = Element::whereId($request->elementId)->with('fields')->first();
     if (isset($element)) {
-      $options = view("Backend.elements.get_fields", compact('element', 'fields_type'))->render();
+      $options = view("backend.elements.get_fields", compact('element', 'fields_type'))->render();
       return response()->json(['success' => $options]);
     } else {
       return response()->json(['error' => 'something wrong']);
