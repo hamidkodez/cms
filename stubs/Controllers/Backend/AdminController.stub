@@ -97,12 +97,12 @@ class AdminController extends Controller
         $data['vendors'] = User::where('role_id', 2)->count();
         $data['bookings'] = Booking::count();
         $data['experiences'] = Experience::count();
-        return view('Backend.dashboard.dashboard', compact('data'));
+        return view('backend.dashboard.dashboard', compact('data'));
     }
 
     public function account()
     {
-        return view('Backend.admin.index');
+        return view('backend.admin.index');
     }
 
     public function logout(Request $request)

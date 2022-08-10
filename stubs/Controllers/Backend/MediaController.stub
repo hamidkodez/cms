@@ -23,7 +23,7 @@ class MediaController extends Controller
     dd($download);
     dd($data);
 
-    return view('Backend.medias.index')->with($data);
+    return view('backend.medias.index')->with($data);
     dd(Storage::allFiles('public/media'));
     dd(Storage::allDirectories('public/media'));
     dd(Storage::allDirectories('public/media'));

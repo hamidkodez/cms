@@ -15,7 +15,7 @@ class MenuController extends Controller
         $data['recent'] = Page::where('is_home',0)->orderBy('id', 'DESC')->get();
         $data['menu_state'] = Menu::where('slug', $menu->slug)->with('MenuItem.submenu')->first();
         $data['pages'] = Page::where('is_home',0)->orderBy('id', 'DESC')->get();
-        return view('Backend.menu.add', $data);
+        return view('backend.menu.add', $data);
     }
 
     public function listMenu(Request $request)

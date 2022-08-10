@@ -92,7 +92,7 @@ class PostController extends Controller
                 echo json_encode($json_data);
             }
         } else{
-            return view('Backend.posts.index');
+            return view('backend.posts.index');
         }
     }
 
@@ -100,7 +100,7 @@ class PostController extends Controller
     {
         $tags = Tag::orderBy('created_at', 'DESC')->get();
         $categories = Category::orderBy('created_at', 'DESC')->get();
-        return view('Backend.posts.create', compact('categories', 'tags'));
+        return view('backend.posts.create', compact('categories', 'tags'));
     }
 
     public function store(Request $request)
@@ -155,7 +155,7 @@ class PostController extends Controller
             $post_tags = implode(', ', $posttags);
         }
         $categories = Category::orderBy('created_at', 'DESC')->get();
-        return view('Backend.posts.edit', compact('post', 'categories', 'tags','post_tags'));
+        return view('backend.posts.edit', compact('post', 'categories', 'tags','post_tags'));
     }
 
     public function update(Request $request)

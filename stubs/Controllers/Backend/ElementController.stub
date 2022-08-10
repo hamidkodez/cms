@@ -66,7 +66,7 @@ class ElementController extends Controller
         echo json_encode($json_data);
       }
     } else {
-      return view('Backend.elements.index');
+      return view('backend.elements.index');
     }
   }
 
@@ -77,7 +77,7 @@ class ElementController extends Controller
     $fields = $matches[1];
     $parents = Element::where('type', 'parent')->doesntHave('child_element')->get();
     if ($fields) {
-      return view('Backend.elements.create', compact('fields', 'parents'));
+      return view('backend.elements.create', compact('fields', 'parents'));
     } else {
       return redirect()->back()->with(['error' => 'Something went wrong....!']);
     }
@@ -120,7 +120,7 @@ class ElementController extends Controller
     $fields = $matches[1];
     $element->load('parent_element', 'fields');
     $parents = Element::where('type', 'parent')->where('id', '!=', $element->id)->doesntHave('child_element')->get();
-    return view('Backend.elements.edit', compact('element', 'parents', 'fields'));
+    return view('backend.elements.edit', compact('element', 'parents', 'fields'));
   }
 
   public function update(Request $request)

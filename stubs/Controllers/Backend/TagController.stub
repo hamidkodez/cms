@@ -75,13 +75,13 @@ class TagController extends Controller
             }
         }
         else{
-            return view('Backend.tags.index');
+            return view('backend.tags.index');
         }
     }
 
     public function create()
     {
-        return view('Backend.tags.create');
+        return view('backend.tags.create');
     }
 
     public function store(Request $request)
@@ -118,13 +118,13 @@ class TagController extends Controller
     public function show($id)
     {
         $tag = Tag::whereId($id)->first();
-        return view('Backend.tags.show', compact('tag'));
+        return view('backend.tags.show', compact('tag'));
     }
 
     public function edit($slug)
     {
         $tag = Tag::where('slug', $slug)->first();
-        return view('Backend.tags.edit', compact('tag'));
+        return view('backend.tags.edit', compact('tag'));
     }
 
     public function update(Request $request, $slug)

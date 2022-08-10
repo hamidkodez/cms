@@ -115,7 +115,7 @@ class PageController extends Controller
 
 
     } else {
-      return view('Backend.pages.index');
+      return view('backend.pages.index');
     }
   }
 
@@ -139,7 +139,7 @@ class PageController extends Controller
     preg_match_all("/'([^']+)'/", $type, $matches);
     $page->types  = $matches[1];
     if ($page) {
-      return view('Backend.pages.create', compact('page'));
+      return view('backend.pages.create', compact('page'));
     } else {
       return redirect()->back()->with(['error' => 'Something went wrong....!']);
     }
@@ -150,7 +150,7 @@ class PageController extends Controller
     $pageId = $page->id;
     $page = Page::whereId($pageId)->with('pageElements.element.fields', 'pageElements.content')->first();
     $element = Element::with('fields')->get();
-    return view('Backend.pages.edit', compact('page'));
+    return view('backend.pages.edit', compact('page'));
   }
 
   public function update(Request $request)

@@ -89,14 +89,14 @@ class UserController extends Controller
         echo json_encode($json_data);
       }
     } else {
-      return view('Backend.users.index');
+      return view('backend.users.index');
     }
   }
 
   public function show($id)
   {
     $user = User::withTrashed()->whereId($id)->first();
-    return view('Backend.users.show', compact('user'));
+    return view('backend.users.show', compact('user'));
   }
 
   public function destroy($id)
