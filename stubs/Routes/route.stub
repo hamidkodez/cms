@@ -17,6 +17,7 @@ use App\Http\Controllers\frontend\{
 };
 
 Route::get('/', [FrontPageController::class, 'home'])->name('home');
+Route::get('/home', [FrontPageController::class, 'home']);
 Route::get('/category/{slug}', [FrontPostController::class, 'showCategory'])->name('category.show');
 Route::get('/tag/{slug}', [FrontPostController::class, 'showTag'])->name('tag.show');
 Route::get('/blog/{slug}', [FrontPostController::class, 'show'])->name('blog.show');
@@ -29,11 +30,12 @@ Route::get('register', [App\Http\Controllers\Auth\RegisterController::class, 'sh
 Route::post('register', [App\Http\Controllers\Auth\RegisterController::class, 'register']);
 Route::post('login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
 Route::get('login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
+
 Route::prefix('/password')->as('password.')->group(function () {
-//    Route::post('/email', [App\Http\Controllers\frontend\ForgotPasswordController::class, 'sendResetLinkEmail'])->name('email');
-//    Route::get('/reset/{token}', [App\Http\Controllers\frontend\ForgotPasswordController::class, 'showResetForm'])->name('reset');
-//    Route::post('/reset', [App\Http\Controllers\frontend\ForgotPasswordController::class, 'reset'])->name('update');
-//    Route::get('/reset/', [App\Http\Controllers\frontend\ForgotPasswordController::class, 'showLinkRequestForm'])->name('request');
+    Route::post('/email', [App\Http\Controllers\frontend\ForgotPasswordController::class, 'sendResetLinkEmail'])->name('email');
+    Route::get('/reset/{token}', [App\Http\Controllers\frontend\ForgotPasswordController::class, 'showResetForm'])->name('reset');
+    Route::post('/reset', [App\Http\Controllers\frontend\ForgotPasswordController::class, 'reset'])->name('update');
+    Route::get('/reset/', [App\Http\Controllers\frontend\ForgotPasswordController::class, 'showLinkRequestForm'])->name('request');
 });
 
 Route::group(['middleware' => 'auth'], function () {

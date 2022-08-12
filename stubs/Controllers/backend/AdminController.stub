@@ -4,8 +4,6 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
-use App\Models\Booking;
-use App\Models\Experience;
 use App\Models\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\JsonResponse;
@@ -95,8 +93,6 @@ class AdminController extends Controller
     {
         $data['users'] = User::where('role_id', 1)->count();
         $data['vendors'] = User::where('role_id', 2)->count();
-        $data['bookings'] = Booking::count();
-        $data['experiences'] = Experience::count();
         return view('backend.dashboard.dashboard', compact('data'));
     }
 

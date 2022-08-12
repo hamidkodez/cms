@@ -36,7 +36,7 @@ class ControllersCommand extends Command
             mkdir($directory, 0755, true);
         }
 
-        collect($filesystem->allFiles(__DIR__ . '/../stubs/auth'))
+        collect($filesystem->allFiles(__DIR__ . '/../stubs/Controllers/auth'))
             ->each(function (SplFileInfo $file) use ($filesystem) {
                 $filesystem->copy(
                     $file->getPathname(),

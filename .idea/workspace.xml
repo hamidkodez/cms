@@ -5,42 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10334c6f-72c5-4e85-91c2-f4ce354af3f8" name="Changes" comment="updated version cms package">
+      <change afterPath="$PROJECT_DIR$/stubs/Views/frontend/user/password/forgot.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stubs/Views/frontend/user/password/update.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AuthCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AuthCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AuthRouteMethods.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AuthRouteMethods.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ControllersCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControllersCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Auth/ConfirmPasswordController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/auth/ConfirmPasswordController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Auth/ForgotPasswordController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/auth/ForgotPasswordController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Auth/LoginController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/auth/LoginController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Auth/RegisterController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/auth/RegisterController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Auth/ResetPasswordController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/auth/ResetPasswordController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Auth/VerificationController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/auth/VerificationController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Controllers/Auth/ConfirmPasswordController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/auth/ConfirmPasswordController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Controllers/Auth/ForgotPasswordController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/auth/ForgotPasswordController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Controllers/Auth/LoginController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/auth/LoginController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Controllers/Auth/RegisterController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/auth/RegisterController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Controllers/Auth/ResetPasswordController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/auth/ResetPasswordController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Controllers/Auth/VerificationController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/auth/VerificationController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Controllers/Backend/AdminController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/backend/AdminController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Controllers/Backend/CategoryController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/backend/CategoryController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Controllers/Backend/ElementController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/backend/ElementController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Controllers/Backend/ElementFieldsController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/backend/ElementFieldsController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Controllers/Backend/MediaController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/backend/MediaController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Controllers/Backend/MenuController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/backend/MenuController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Controllers/Backend/PageContentController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/backend/PageContentController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Controllers/Backend/PageController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/backend/PageController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Controllers/Backend/PageElememtsController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/backend/PageElememtsController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Controllers/Backend/PostController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/backend/PostController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Controllers/Backend/TagController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/backend/TagController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Controllers/Backend/UserController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/backend/UserController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Controllers/Frontend/CategoryController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/frontend/CategoryController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Controllers/Frontend/ForgotPasswordController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/frontend/ForgotPasswordController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Controllers/Frontend/HomeController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/frontend/HomeController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Controllers/Frontend/PageController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/frontend/PageController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Controllers/Frontend/PostController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/frontend/PostController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Controllers/Frontend/ServiceController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/frontend/ServiceController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Controllers/Frontend/SitemapController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/frontend/SitemapController.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs/Controllers/Frontend/UserController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/frontend/UserController.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stubs/Controllers/auth/ForgotPasswordController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/auth/ForgotPasswordController.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stubs/Controllers/auth/LoginController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/auth/LoginController.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stubs/Controllers/auth/RegisterController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/auth/RegisterController.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stubs/Controllers/backend/AdminController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/backend/AdminController.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stubs/Controllers/backend/CategoryController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/backend/CategoryController.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stubs/Controllers/backend/ElementFieldsController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/backend/ElementFieldsController.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stubs/Controllers/backend/PostController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/backend/PostController.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stubs/Controllers/frontend/CategoryController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/frontend/CategoryController.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stubs/Controllers/frontend/ForgotPasswordController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/frontend/ForgotPasswordController.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stubs/Controllers/frontend/HomeController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/frontend/HomeController.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stubs/Controllers/frontend/SitemapController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Controllers/frontend/SitemapController.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stubs/Routes/route.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Routes/route.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stubs/Views/frontend/includes/navigation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Views/frontend/includes/navigation.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stubs/Views/frontend/user/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Views/frontend/user/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stubs/Views/frontend/user/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/Views/frontend/user/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stubs/auth/ForgotPasswordController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/auth/ForgotPasswordController.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stubs/auth/LoginController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/auth/LoginController.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stubs/auth/RegisterController.stub" beforeDir="false" afterPath="$PROJECT_DIR$/stubs/auth/RegisterController.stub" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +61,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/stubs/Controllers/Frontend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/stubs/Views/frontend/user" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -86,9 +72,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\cms\stubs\Views\frontend\user" />
       <recent name="C:\xampp\htdocs\cms\stubs\Controllers\Frontend" />
       <recent name="C:\xampp\htdocs\cms\stubs\Middleware" />
-      <recent name="C:\xampp\htdocs\cms\stubs\Views\frontend\user" />
       <recent name="C:\xampp\htdocs\cms\stubs\database\migrations" />
       <recent name="C:\xampp\htdocs\cms\src" />
     </key>
@@ -121,6 +107,7 @@
       <workItem from="1656583670857" duration="11977000" />
       <workItem from="1660136860982" duration="1711000" />
       <workItem from="1660301546433" duration="1306000" />
+      <workItem from="1660303779492" duration="5670000" />
     </task>
     <task id="LOCAL-00001" summary="updated version cms package">
       <created>1646320039296</created>
