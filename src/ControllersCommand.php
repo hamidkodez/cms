@@ -31,44 +31,44 @@ class ControllersCommand extends Command
     public function handle()
     {
         $filesystem = new Filesystem;
-//        Auth Controller
-        if (!is_dir($directory = app_path('Http/Controllers/Auth'))) {
+//        auth Controller
+        if (!is_dir($directory = app_path('Http/Controllers/auth'))) {
             mkdir($directory, 0755, true);
         }
 
-        collect($filesystem->allFiles(__DIR__ . '/../stubs/Auth'))
+        collect($filesystem->allFiles(__DIR__ . '/../stubs/auth'))
             ->each(function (SplFileInfo $file) use ($filesystem) {
                 $filesystem->copy(
                     $file->getPathname(),
-                    app_path('Http/Controllers/Auth/' . Str::replaceLast('.stub', '.php', $file->getFilename()))
+                    app_path('Http/Controllers/auth/' . Str::replaceLast('.stub', '.php', $file->getFilename()))
                 );
             });
 
 
-        //Frontend Controller
-        if (!is_dir($directory = app_path('Http/Controllers/Frontend'))) {
+        //frontend Controller
+        if (!is_dir($directory = app_path('Http/Controllers/frontend'))) {
             mkdir($directory, 0755, true);
         }
 
-        collect($filesystem->allFiles(__DIR__ . '/../stubs/Controllers/Frontend'))
+        collect($filesystem->allFiles(__DIR__ . '/../stubs/Controllers/frontend'))
             ->each(function (SplFileInfo $file) use ($filesystem) {
                 $filesystem->copy(
                     $file->getPathname(),
-                    app_path('Http/Controllers/Frontend/' . Str::replaceLast('.stub', '.php', $file->getFilename()))
+                    app_path('Http/Controllers/frontend/' . Str::replaceLast('.stub', '.php', $file->getFilename()))
                 );
             });
 
 
-//        Backend Controller
-        if (!is_dir($directory = app_path('Http/Controllers/Backend'))) {
+//        backend Controller
+        if (!is_dir($directory = app_path('Http/Controllers/backend'))) {
             mkdir($directory, 0755, true);
         }
 
-        collect($filesystem->allFiles(__DIR__ . '/../stubs/Controllers/Backend'))
+        collect($filesystem->allFiles(__DIR__ . '/../stubs/Controllers/backend'))
             ->each(function (SplFileInfo $file) use ($filesystem) {
                 $filesystem->copy(
                     $file->getPathname(),
-                    app_path('Http/Controllers/Backend/' . Str::replaceLast('.stub', '.php', $file->getFilename()))
+                    app_path('Http/Controllers/backend/' . Str::replaceLast('.stub', '.php', $file->getFilename()))
                 );
             });
         $this->info('Authentication scaffolding generated successfully.');

@@ -98,14 +98,14 @@ class AuthCommand extends Command
             }
 
             copy(
-                __DIR__.'/Auth/'.$this->argument('type').'-stubs/'.$key,
+                __DIR__.'/auth/'.$this->argument('type').'-stubs/'.$key,
                 $view
             );
         }
     }
 
     /**
-     * Export the authentication Backend.
+     * Export the authentication backend.
      *
      * @return void
      */
@@ -125,7 +125,7 @@ class AuthCommand extends Command
 
         file_put_contents(
             base_path('routes/web.php'),
-            file_get_contents(__DIR__.'/Auth/stubs/routes.stub'),
+            file_get_contents(__DIR__.'/auth/stubs/routes.stub'),
             FILE_APPEND
         );
 
@@ -145,7 +145,7 @@ class AuthCommand extends Command
         return str_replace(
             '{{namespace}}',
             $this->laravel->getNamespace(),
-            file_get_contents(__DIR__.'/Auth/stubs/controllers/HomeController.stub')
+            file_get_contents(__DIR__.'/auth/stubs/controllers/HomeController.stub')
         );
     }
 
