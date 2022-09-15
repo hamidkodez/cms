@@ -1,6 +1,6 @@
 <?php
 
-namespace Syedhamidalishahofficial\Cms;
+namespace Webengrg\Cms;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;

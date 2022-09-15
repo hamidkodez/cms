@@ -1,8 +1,8 @@
 # Laravel CMS Package
 
-<a href="https://packagist.org/packages/syedhamidalishahofficial/cms"><img src="https://img.shields.io/packagist/dt/hamid/ui" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/syedhamidalishahofficial/cms"><img src="https://img.shields.io/packagist/v/hamid/ui" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/syedhamidalishahofficial/cms"><img src="https://img.shields.io/packagist/l/hamid/ui" alt="License"></a>
+<a href="https://packagist.org/packages/webengrg/cms"><img src="https://img.shields.io/packagist/dt/hamid/ui" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/webengrg/cms"><img src="https://img.shields.io/packagist/v/hamid/ui" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/webengrg/cms"><img src="https://img.shields.io/packagist/l/hamid/ui" alt="License"></a>
 
 ## Introduction
 
@@ -12,15 +12,15 @@ It is provides a starting point for any laravel project (Frontend Backend system
 
 ### Installation
 
-The Cms provided by Syed Hamid Ali Shah is located in the `syedhamidalishahofficial/cms` Composer package, which may be installed using Composer:
+The Cms provided by Syed Hamid Ali Shah is located in the `webengrg/cms` Composer package, which may be installed using Composer:
 
 ```bash
 cp server.php index.php
 cp public/.htaccess .htaccess
-composer require syedhamidalishahofficial/cms
+composer require webengrg/cms
 ```
 
-Once the `syedhamidalishahofficial/cms` package has been installed, you may install the frontend scaffolding using the `ui` Artisan command:
+Once the `webengrg/cms` package has been installed, you may install the frontend scaffolding using the `ui` Artisan command:
 #  Step To Be Followed
 ```bash
 # Create your database and connect with your project
@@ -103,7 +103,7 @@ In order to ensure that the Laravel community is welcoming to all, please review
 
 ## Security Vulnerabilities
 
-Please review [our security policy](https://github.com/syedhamidalishahofficial/cms/security/policy) on how to report security vulnerabilities.
+Please review [our security policy](https://github.com/webengrg/cms/security/policy) on how to report security vulnerabilities.
 
 ## License
 

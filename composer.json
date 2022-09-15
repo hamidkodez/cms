@@ -1,12 +1,12 @@
 {
-    "name": "syedhamidalishahofficial/cms",
+    "name": "webengrg/cms",
     "description": "Syed Hamid Ali Shah  Cms utilities and presets.",
     "keywords": ["Syed Hamid Ali Shah", "cms"],
     "license": "MIT",
     "authors": [
         {
             "name": "Syed Hamid Ali Shah",
-            "email": "hamidcoding@outlook.com"
+            "email": "engrg96@gmail.com"
         }
     ],
     "require": {
@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Syedhamidalishahofficial\\Cms\\": "src/",
+            "Webengrg\\Cms\\": "src/",
             "Illuminate\\Foundation\\Auth\\": "auth-backend/"
         }
     },
@@ -34,7 +34,7 @@
         },
         "laravel": {
             "providers": [
-                "Syedhamidalishahofficial\\Cms\\CmsServiceProvider"
+                "Webengrg\\Cms\\CmsServiceProvider"
             ]
         }
     },
